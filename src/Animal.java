@@ -1,52 +1,37 @@
 abstract class Animal {
-    protected boolean isMammal;
-    protected boolean isCarnivorous;
+    protected String name;
+    protected String type;
 
-    public Animal(boolean isMammal, boolean isCarnivorous) {
-        this.isMammal = isMammal;
-        this.isCarnivorous = isCarnivorous;
+    public Animal(String name) {
+        this.name = name;
     }
 
-    public boolean getIsMammal() {
-        return this.isMammal;
+    public String getAnimalName() {
+        return this.name;
+    }
+    public String getAnimalType() {
+        return this.type;
     }
 
-    public boolean getIsCarnivorous() {
-        return this.isCarnivorous;
-    }
 
     abstract public String makeNoise();
+    abstract public String wakeUp();
+    abstract public String sleep();
+    abstract public String eat();
+//    abstract public String roam();
 
-    public void printAnimal(String name) {
-        System.out.println("A " + name + " says '" + this.makeNoise() + "', is " + (this.getIsCarnivorous() ? "" : "not ")
-                + "carnivorous, and is " + (this.getIsMammal() ? "" : "not ") + "a mammal.");
+    public void printAnimal() {
+        System.out.println("Animal is a " + this.getAnimalType() + " and its name is " + this.getAnimalName());
     }
+
 }
 
-class Dog extends Animal{
-    public Dog() {
-        super(true, true);
-    }
-
-    public String makeNoise() {
-        return "ruff";
-    }
-}
-
-class Cow extends Animal{
-    public Cow() {
-        super(true, false);
-    }
-
-    public String makeNoise() {
-        return "moo";
-    }
-}
-
-class Cat extends Animal{
+class Feline extends Animal{
     CatNoise catNoise;
-    public Cat() {
-        super(true, true);
+
+    public Feline(String name) {
+        super(name);
+        this.type = "Feline";
     }
 
     public void setCatNoise(CatNoise cn) {
@@ -56,15 +41,32 @@ class Cat extends Animal{
     public String makeNoise() {
         return catNoise.makeNoise();
     }
-}
 
-class Duck extends Animal{
-    public Duck() {
-        super(false, false);
+    public String wakeUp(){
+        return String.format("%s is awake!", this.name);
     }
 
-    public String makeNoise() {
-        return "quack";
+    public String sleep(){ return stubbornKittyWontSleep(); }
+
+    public String eat(){ return felineAte(); }
+//    public String roam(){}
+
+    public String stubbornKittyWontSleep(){
+        return String.format("%s is being stubborn and won't go to sleep!", this.name);
+    }
+
+    public String felineAte(){
+        int answer = 1;
+        String response = "";
+        if(Math.random() < 0.5) {
+            answer = 0;
+        }
+
+        if (answer == 1){
+            response = String.format("%s ate a mouse!", this.name);
+        } else {
+            response = String.format("%s ate a cat food!", this.name);
+        }
+        return response;
     }
 }
-
