@@ -18,7 +18,7 @@ abstract class Animal {
     abstract public String wakeUp();
     abstract public String sleep();
     abstract public String eat();
-//    abstract public String roam();
+    abstract public String roam();
 
     public void printAnimal() {
         System.out.println("Animal is a " + this.getAnimalType() + " and its name is " + this.getAnimalName());
@@ -41,15 +41,16 @@ class Feline extends Animal{
     public String makeNoise() {
         return catNoise.makeNoise();
     }
-
-    public String wakeUp(){
-        return String.format("%s is awake!", this.name);
-    }
-
+    public String wakeUp(){ return String.format("%s is awake!", this.name); }
     public String sleep(){ return stubbornKittyWontSleep(); }
-
     public String eat(){ return felineAte(); }
-//    public String roam(){}
+    public String roam(){ return String.format("%s is roaming!", this.name); }
+
+    /* ##################################################################################
+       Feline specific behaviors:
+       public String stubbornKittyWontSleep() : feline sleeps or doesn't
+       public String felineAte() : what the feline eats
+    */
 
     public String stubbornKittyWontSleep(){
         return String.format("%s is being stubborn and won't go to sleep!", this.name);
@@ -65,7 +66,7 @@ class Feline extends Animal{
         if (answer == 1){
             response = String.format("%s ate a mouse!", this.name);
         } else {
-            response = String.format("%s ate a cat food!", this.name);
+            response = String.format("%s ate a feline food!", this.name);
         }
         return response;
     }
