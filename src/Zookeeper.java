@@ -11,17 +11,17 @@ public class Zookeeper{
 
 
         Animal feline2 = new Feline("Katy");
-        ((Feline) feline).setCatNoise(new NiceKitty());
-        arr[1] = feline;
+        ((Feline) feline2).setCatNoise(new NiceKitty());
+        arr[1] = feline2;
 
 
         // Zookeeper performs duties
         for (int i = 0; i < arr.length; i++) {
             arr[i].printAnimal();
-            System.out.println(feline2.wakeUp());
-            System.out.println(feline2.sleep());
-            System.out.println(feline2.eat());
-            System.out.println(feline2.roam());
+            System.out.println(arr[i].wakeUp());
+            System.out.println(arr[i].sleep());
+            System.out.println(arr[i].eat());
+            System.out.println(arr[i].roam());
             System.out.println("_______________\n");
         }
 
