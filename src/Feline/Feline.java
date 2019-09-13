@@ -1,58 +1,32 @@
-abstract class Animal {
-    protected String name;
-    protected String type;
+package Feline;
 
-    public Animal(String name) {
-        this.name = name;
-    }
+import Animal.Animal;
 
-    public String getAnimalName() {
-        return this.name;
-    }
-    public String getAnimalType() {
-        return this.type;
-    }
-
-
-    abstract public String makeNoise();
-    abstract public String wakeUp();
-    abstract public String sleep();
-    abstract public String eat();
-    abstract public String roam();
-
-    public void printAnimal() {
-        System.out.println("Animal is a " + this.getAnimalType() + " and its name is " + this.getAnimalName());
-    }
-
-}
-
-class Feline extends Animal{
-    CatNoise catNoise;
+public class Feline extends Animal {
+    FelineNoise catNoise;
 
     public Feline(String name) {
         super(name);
         this.type = "Feline";
     }
 
-    public void setCatNoise(CatNoise cn) {
+    public void setFelineNoise(FelineNoise cn) {
         catNoise = cn;
     }
 
-    public String makeNoise() {
-        return catNoise.makeNoise();
-    }
+    public String makeNoise() { return String.format("%s says: %s", this.name, catNoise.makeNoise()); }
     public String wakeUp(){ return String.format("%s is awake!", this.name); }
-    public String sleep(){ return stubbornKittyWontSleep(); }
+    public String sleep(){ return stubbornFelineWontSleep(); }
     public String eat(){ return felineAte(); }
     public String roam(){ return String.format("%s is roaming!", this.name); }
 
     /* ##################################################################################
-       Feline specific behaviors:
+       Animal.Feline specific behaviors:
        public String stubbornKittyWontSleep() : feline sleeps or doesn't
        public String felineAte() : what the feline eats
     */
 
-    public String stubbornKittyWontSleep(){
+    public String stubbornFelineWontSleep(){
         return String.format("%s is being stubborn and won't go to sleep!", this.name);
     }
 
