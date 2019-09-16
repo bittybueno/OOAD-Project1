@@ -2,7 +2,7 @@ package Feline;
 
 import Animal.*;
 
-abstract public class Feline extends Animal implements SpeakBehavior {
+abstract public class Feline extends Animal {
     SpeakBehavior catNoise;
 
     public Feline(String name) {
@@ -16,9 +16,7 @@ abstract public class Feline extends Animal implements SpeakBehavior {
 
     public String makeNoise() { return String.format("%s says: %s", this.name, catNoise.makeNoise()); }
     public String eat(){ return felineAte(); }
-    public String wakeUp(){ return String.format("%s is awake!", this.name); }
     @Override public String sleep(){ return stubbornFelineWontSleep(); }
-    public String roam(){ return String.format("%s is roaming!", this.name); }
 
     /* ##################################################################################
        Animal.Feline specific behaviors:

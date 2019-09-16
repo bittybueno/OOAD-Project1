@@ -9,16 +9,16 @@ public class Zookeeper{
 
         // Creating the objects
         Feline lion1 = new Lion("Carl");
-        ((Feline) lion1).setFelineNoise(new MeanKitty());
+        lion1.setFelineNoise(new MeanKitty());
         arr[0] = lion1;
 
 
         Feline lion2 = new Lion("Katy");
-        ((Feline) lion2).setFelineNoise(new NiceKitty());
+        lion2.setFelineNoise(new NiceKitty());
         arr[1] = lion2;
 
         Feline lion3 = new Lion("Larry");
-        ((Feline) lion3).setFelineNoise(new NiceKitty());
+        lion3.setFelineNoise(new NiceKitty());
         arr[2] = lion3;
 
 
