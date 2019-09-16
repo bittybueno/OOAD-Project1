@@ -1,23 +1,23 @@
 package Feline;
 
-import Animal.Animal;
+import Animal.*;
 
-public class Feline extends Animal {
-    FelineNoise catNoise;
+abstract public class Feline extends Animal implements SpeakBehavior {
+    SpeakBehavior catNoise;
 
     public Feline(String name) {
         super(name);
         this.type = "Feline";
     }
 
-    public void setFelineNoise(FelineNoise cn) {
+    public void setFelineNoise(SpeakBehavior cn) {
         catNoise = cn;
     }
 
     public String makeNoise() { return String.format("%s says: %s", this.name, catNoise.makeNoise()); }
-    public String wakeUp(){ return String.format("%s is awake!", this.name); }
-    public String sleep(){ return stubbornFelineWontSleep(); }
     public String eat(){ return felineAte(); }
+    public String wakeUp(){ return String.format("%s is awake!", this.name); }
+    @Override public String sleep(){ return stubbornFelineWontSleep(); }
     public String roam(){ return String.format("%s is roaming!", this.name); }
 
     /* ##################################################################################
@@ -38,9 +38,9 @@ public class Feline extends Animal {
         }
 
         if (answer == 1){
-            response = String.format("%s ate a mouse!", this.name);
+            response = String.format("mouse!");
         } else {
-            response = String.format("%s ate a feline food!", this.name);
+            response = String.format("feline food!");
         }
         return response;
     }

@@ -1,6 +1,8 @@
 package Feline;
 
-public class NiceKitty implements FelineNoise {
+import Animal.SpeakBehavior;
+
+public class NiceKitty implements SpeakBehavior {
     public String makeNoise() {
         return "meooow";
     }

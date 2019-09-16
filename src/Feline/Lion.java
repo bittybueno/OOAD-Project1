@@ -7,6 +7,4 @@ public class Lion extends Feline {
         super(name);
     }
 
-    public String makeNoise() { return String.format("%s says: RAWRRRR!", this.name); }
-
 }

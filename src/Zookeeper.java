@@ -8,17 +8,18 @@ public class Zookeeper{
         arr = new Animal[3];
 
         // Creating the objects
-        Animal feline = new Feline("Carl");
-        ((Feline) feline).setFelineNoise(new MeanKitty());
-        arr[0] = feline;
+        Feline lion1 = new Lion("Carl");
+        ((Feline) lion1).setFelineNoise(new MeanKitty());
+        arr[0] = lion1;
 
 
-        Animal feline2 = new Feline("Katy");
-        ((Feline) feline2).setFelineNoise(new NiceKitty());
-        arr[1] = feline2;
+        Feline lion2 = new Lion("Katy");
+        ((Feline) lion2).setFelineNoise(new NiceKitty());
+        arr[1] = lion2;
 
-        Animal lion1 = new Lion("Larry");
-        arr[2] = lion1;
+        Feline lion3 = new Lion("Larry");
+        ((Feline) lion3).setFelineNoise(new NiceKitty());
+        arr[2] = lion3;
 
 
         // Zookeeper performs duties
