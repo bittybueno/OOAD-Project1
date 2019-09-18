@@ -2,7 +2,7 @@ package Feline;
 
 import Animal.*;
 
-abstract public class Feline extends Animal implements SpeakBehavior, EatBehavior {
+abstract public class Feline extends Animal {
     SpeakBehavior catNoise;
 
     public Feline(String name) {

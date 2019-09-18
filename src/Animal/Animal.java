@@ -1,6 +1,6 @@
 package Animal;
 
-public abstract class Animal {
+public abstract class Animal implements SpeakBehavior, EatBehavior {
     protected String name;
     protected String type;
 
