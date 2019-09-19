@@ -9,7 +9,7 @@ public class Hippo extends Pachyderm implements SpeakBehavior {
     }
 
     public String makeNoise() {
-        return "Sup pimp G, new new ";
+        return "BLUB BLUB ...*underwater grumbling*";
     }
 
 }
