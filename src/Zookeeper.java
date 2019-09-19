@@ -7,7 +7,7 @@ public class Zookeeper {
     public static void main(String[] args) {
         // Array of feline for Zookeeper to cycle through
         Animal[] arr;
-        int size = 14;
+        int size = 16;
         arr = new Animal[size];
 
         arr[0] = new Hippo("Harry");
@@ -24,6 +24,8 @@ public class Zookeeper {
         arr[11] = new Lion("Linda");
         arr[12] = new Tiger("Tony");
         arr[13] = new Tiger("Terri");
+        arr[14] = new Cat("Cathy");
+        arr[15] = new Cat("Chris");
 
         // testing only
         for (int i = 0; i < arr.length; i++) {
