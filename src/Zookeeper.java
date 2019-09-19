@@ -1,12 +1,13 @@
 import Animal.*;
 import Feline.*;
 import Pachyderm.*;
+import Canine.*;
 
 public class Zookeeper {
     public static void main(String[] args) {
         // Array of feline for Zookeeper to cycle through
         Animal[] arr;
-        int size = 6;
+        int size = 10;
         arr = new Animal[size];
 
         // Shouldn't have to work this hard to call an animal
@@ -20,6 +21,10 @@ public class Zookeeper {
         arr[3] = new Rhino("Ronny");
         arr[4] = new Elephant("Earl");
         arr[5] = new Elephant("Edgar");
+        arr[6] = new Dog("Daryl");
+        arr[7] = new Dog("Dayna");
+        arr[8] = new Wolf("Wesley");
+        arr[9] = new Wolf("Wyatt");
 
         // System.out.println(arr[3].name); //name is protected so you can't print it
 
