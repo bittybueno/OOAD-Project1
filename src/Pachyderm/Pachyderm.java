@@ -2,10 +2,14 @@ package Pachyderm;
 
 import Animal.*;
 
-abstract public class Pachyderm extends Animal implements RoamBehavior {
+abstract public class Pachyderm extends Animal implements RoamBehavior, EatBehavior {
     public Pachyderm(String name) {
         super(name);
-        this.type = "Pachyderm";
+        this.family = "Pachyderm";
+    }
+
+    public String eat() {
+        return "Cronching on some Hay and fruit \n";
     }
 
     public String roam() {

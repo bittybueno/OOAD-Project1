@@ -7,7 +7,7 @@ abstract public class Feline extends Animal {
 
     public Feline(String name) {
         super(name);
-        this.type = "Feline";
+        this.family = "Feline";
     }
 
     public void setFelineNoise(SpeakBehavior cn) {

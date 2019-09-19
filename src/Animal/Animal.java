@@ -15,7 +15,8 @@ public interface RoamBehavior {
 public abstract class Animal implements SpeakBehavior, EatBehavior, RoamBehavior {
     // I'd like these to be public so we don't have to run methods to retrieve them
     protected String name;
-    protected String type;
+    protected String family;
+    protected String species;
 
     public Animal(String name) {
         this.name = name;
@@ -25,8 +26,12 @@ public abstract class Animal implements SpeakBehavior, EatBehavior, RoamBehavior
         return this.name;
     }
 
-    public String getAnimalType() {
-        return this.type;
+    public String getAnimalFamily() {
+        return this.family;
+    }
+
+    public String getAnimalSpecies() {
+        return this.species;
     }
 
     public String wakeUp() {
@@ -38,7 +43,8 @@ public abstract class Animal implements SpeakBehavior, EatBehavior, RoamBehavior
     }
 
     public void printAnimal() {
-        System.out.println("Animal is a " + this.getAnimalType() + " and its name is " + this.getAnimalName());
+        System.out.println("This animal is a(n) " + this.getAnimalSpecies() + " of the " + this.getAnimalFamily()
+                + " family, and its name is " + this.getAnimalName());
     }
 
 }
