@@ -6,25 +6,20 @@ public class Zookeeper {
     public static void main(String[] args) {
         // Array of feline for Zookeeper to cycle through
         Animal[] arr;
-        arr = new Animal[4];
+        arr = new Animal[1];
 
-        // Creating the objects
-        Feline lion1 = new Lion("Carl");
-        lion1.setFelineNoise(new MeanKitty());
-        arr[0] = lion1;
+        // We shouldn't have to work this hard to call an animal
+        // Feline lion3 = new Lion("Larry");
+        // lion3.setFelineNoise(new NiceKitty());
+        // arr[1] = lion1;
 
-        Feline lion2 = new Lion("Katy");
-        lion2.setFelineNoise(new NiceKitty());
-        arr[1] = lion2;
+        // arr[1] = new Lion("Larry") This is how simple it should be to make an Animal
+        arr[0] = new Hippo("pimp");
 
-        Feline lion3 = new Lion("Larry");
-        lion3.setFelineNoise(new NiceKitty());
-        arr[2] = lion3;
+        System.out.println(arr[0].makeNoise());
+        System.out.println(arr[0].roam());
 
-        arr[3] = new Hippo("pimp");
-
-        System.out.println(arr[3].makeNoise());
-        System.out.println(arr[3].name);
+        // System.out.println(arr[3].name); //name is protected so you can't print it
 
         // Zookeeper performs duties
         // for (int i = 0; i < arr.length; i++) {
