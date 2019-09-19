@@ -2,24 +2,20 @@ package Feline;
 
 import Animal.*;
 
-abstract public class Feline extends Animal {
-    SpeakBehavior catNoise;
+abstract public class Feline extends Animal implements RoamBehavior, EatBehavior{
 
     public Feline(String name) {
         super(name);
         this.family = "Feline";
     }
 
-    public void setFelineNoise(SpeakBehavior cn) {
-        catNoise = cn;
-    }
-
-    public String makeNoise() {
-        return String.format("%s says: %s", this.name, catNoise.makeNoise());
-    }
 
     public String eat() {
         return felineAte();
+    }
+
+    public String roam() {
+        return "...Sshwoooshhhh...";
     }
 
     @Override
@@ -46,9 +42,9 @@ abstract public class Feline extends Animal {
         }
 
         if (answer == 1) {
-            response = String.format("mouse!");
+            response = String.format("Eatin' a mouse!");
         } else {
-            response = String.format("feline food!");
+            response = String.format("Eatin' some feline food!");
         }
         return response;
     }

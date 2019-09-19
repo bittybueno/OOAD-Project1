@@ -2,15 +2,15 @@ package Feline;
 
 import Animal.SpeakBehavior;
 
-public class Lion extends Feline implements SpeakBehavior {
+public class Tiger extends Feline implements SpeakBehavior {
 
-    public Lion(String name) {
+    public Tiger(String name) {
         super(name);
         this.species = "Lion";
     }
 
     public String makeNoise() {
-        return "RAWRRRRRRR!";
+        return "Grrrrrrr!";
     }
 
 }
