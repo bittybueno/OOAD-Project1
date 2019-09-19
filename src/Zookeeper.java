@@ -26,8 +26,6 @@ public class Zookeeper {
         arr[8] = new Wolf("Wesley");
         arr[9] = new Wolf("Wyatt");
 
-        // System.out.println(arr[3].name); //name is protected so you can't print it
-
         // testing only
         for (int i = 0; i < arr.length; i++) {
             arr[i].printAnimal();
