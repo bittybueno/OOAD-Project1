@@ -7,35 +7,45 @@ abstract public class Feline extends Animal {
 
     public Feline(String name) {
         super(name);
-        this.type = "Feline";
+        this.family = "Feline";
     }
 
     public void setFelineNoise(SpeakBehavior cn) {
         catNoise = cn;
     }
 
-    public String makeNoise() { return String.format("%s says: %s", this.name, catNoise.makeNoise()); }
-    public String eat(){ return felineAte(); }
-    @Override public String sleep(){ return stubbornFelineWontSleep(); }
+    public String makeNoise() {
+        return String.format("%s says: %s", this.name, catNoise.makeNoise());
+    }
 
-    /* ##################################################################################
-       Animal.Feline specific behaviors:
-       public String stubbornKittyWontSleep() : feline sleeps or doesn't
-       public String felineAte() : what the feline eats
-    */
+    public String eat() {
+        return felineAte();
+    }
 
-    public String stubbornFelineWontSleep(){
+    @Override
+    public String sleep() {
+        return stubbornFelineWontSleep();
+    }
+
+    /*
+     * #############################################################################
+     * ##### Animal.Feline specific behaviors: public String
+     * stubbornKittyWontSleep() : feline sleeps or doesn't public String felineAte()
+     * : what the feline eats
+     */
+
+    public String stubbornFelineWontSleep() {
         return String.format("%s is being stubborn and won't go to sleep!", this.name);
     }
 
-    public String felineAte(){
+    public String felineAte() {
         int answer = 1;
         String response = "";
-        if(Math.random() < 0.5) {
+        if (Math.random() < 0.5) {
             answer = 0;
         }
 
-        if (answer == 1){
+        if (answer == 1) {
             response = String.format("mouse!");
         } else {
             response = String.format("feline food!");

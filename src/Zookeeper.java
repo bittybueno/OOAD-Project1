@@ -1,28 +1,32 @@
 import Animal.*;
 import Feline.*;
+import Pachyderm.*;
+import Canine.*;
 
-public class Zookeeper{
+public class Zookeeper {
     public static void main(String[] args) {
         // Array of feline for Zookeeper to cycle through
         Animal[] arr;
-        arr = new Animal[3];
+        int size = 10;
+        arr = new Animal[size];
 
-        // Creating the objects
-        Feline lion1 = new Lion("Carl");
-        lion1.setFelineNoise(new MeanKitty());
-        arr[0] = lion1;
+        // Shouldn't have to work this hard to call an animal
+        // Feline lion3 = new Lion("Larry");
+        // lion3.setFelineNoise(new NiceKitty());
+        // arr[1] = lion1;
 
+        arr[0] = new Hippo("Harry");
+        arr[1] = new Hippo("Harvey");
+        arr[2] = new Rhino("Roger");
+        arr[3] = new Rhino("Ronny");
+        arr[4] = new Elephant("Earl");
+        arr[5] = new Elephant("Edgar");
+        arr[6] = new Dog("Daryl");
+        arr[7] = new Dog("Dayna");
+        arr[8] = new Wolf("Wesley");
+        arr[9] = new Wolf("Wyatt");
 
-        Feline lion2 = new Lion("Katy");
-        lion2.setFelineNoise(new NiceKitty());
-        arr[1] = lion2;
-
-        Feline lion3 = new Lion("Larry");
-        lion3.setFelineNoise(new NiceKitty());
-        arr[2] = lion3;
-
-
-        // Zookeeper performs duties
+        // testing only
         for (int i = 0; i < arr.length; i++) {
             arr[i].printAnimal();
             System.out.println(arr[i].makeNoise());
@@ -32,7 +36,5 @@ public class Zookeeper{
             System.out.println(arr[i].roam());
             System.out.println("_______________\n");
         }
-
-
     }
 }

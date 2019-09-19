@@ -4,6 +4,12 @@
             "type": "java",
             "name": "CodeLens (Launch) - Zookeeper",
             "request": "launch",
+            "mainClass": "Zookeeper"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Zookeeper",
+            "request": "launch",
             "mainClass": "Zookeeper",
             "projectName": "hw1_4d3b3219"
         }
