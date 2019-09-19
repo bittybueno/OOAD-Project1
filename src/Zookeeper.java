@@ -1,30 +1,34 @@
-public class Zookeeper{
+import Animal.*;
+import Feline.*;
+
+public class Zookeeper {
     public static void main(String[] args) {
-        // Array of animal for Zookeeper to cycle through
-        Animal[] arr;
-        arr = new Animal[2];
+        // Array of feline for Zookeeper to cycle through
+        Feline[] arrFeline;
+        arrFeline = new Feline[3];
 
         // Creating the objects
-        Animal feline = new Feline("Carl");
-        ((Feline) feline).setCatNoise(new MeanKitty());
-        arr[0] = feline;
+        Feline lion1 = new Lion("Carl");
+        lion1.setFelineNoise(new MeanKitty());
+        arrFeline[0] = lion1;
 
+        Feline lion2 = new Lion("Katy");
+        lion2.setFelineNoise(new NiceKitty());
+        arrFeline[1] = lion2;
 
-        Animal feline2 = new Feline("Katy");
-        ((Feline) feline2).setCatNoise(new NiceKitty());
-        arr[1] = feline2;
-
+        Feline lion3 = new Lion("Larry");
+        lion3.setFelineNoise(new NiceKitty());
+        arrFeline[2] = lion3;
 
         // Zookeeper performs duties
-        for (int i = 0; i < arr.length; i++) {
-            arr[i].printAnimal();
-            System.out.println(arr[i].wakeUp());
-            System.out.println(arr[i].sleep());
-            System.out.println(arr[i].eat());
-            System.out.println(arr[i].roam());
+        for (int i = 0; i < arrFeline.length; i++) {
+            arrFeline[i].printAnimal();
+            System.out.println(arrFeline[i].makeNoise());
+            System.out.println(arrFeline[i].wakeUp());
+            System.out.println(arrFeline[i].sleep());
+            System.out.println(arrFeline[i].eat());
+            System.out.println(arrFeline[i].roam());
             System.out.println("_______________\n");
         }
-
-
     }
 }
