@@ -25,9 +25,9 @@ abstract public class Feline extends Animal implements RoamBehavior, EatBehavior
 
     /*
      * #############################################################################
-     * ##### Animal.Feline specific behaviors: public String
-     * stubbornKittyWontSleep() : feline sleeps or doesn't public String felineAte()
-     * : what the feline eats
+     * Animal.Feline specific behaviors: public String
+     * stubbornKittyWontSleep(): feline sleeps or doesn't 
+     * public String felineAte(): what the feline eats (random)
      */
 
     public String stubbornFelineWontSleep() {

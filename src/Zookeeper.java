@@ -2,14 +2,50 @@ import Animal.*;
 import Feline.*;
 import Pachyderm.*;
 import Canine.*;
-
 public class Zookeeper {
+    //Zookeeper's Responsibilities
+    public void wakeywakey(Animal[] arr) {
+        System.out.println("\n\nZookeeper yells, 'Wake Up!\n");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i].printAnimal();
+            System.out.println(arr[i].wakeUp());
+        }
+    }
+    public void rollCall(Animal[] arr) {
+        System.out.println("\n\nZookeeper yells, 'Roll Call!\n");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i].printAnimal();
+            System.out.println(arr[i].makeNoise());
+        }
+    }
+    public void feed(Animal[] arr) {
+        System.out.println("\n\nZookeeper feeds the animals\n");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i].printAnimal();
+            System.out.println(arr[i].eat());
+        }
+    }
+    public void excercise(Animal[] arr){
+        System.out.println("\n\nEverybody, let's get physical!\n");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i].printAnimal();
+            System.out.println(arr[i].roam());
+        }
+    }
+    public void sleep(Animal[] arr){
+        System.out.println("\n\nBedtime!\n");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i].printAnimal();
+            System.out.println(arr[i].sleep());
+        }
+    }
     public static void main(String[] args) {
         // Array of feline for Zookeeper to cycle through
         Animal[] arr;
         int size = 16;
         arr = new Animal[size];
 
+        // Create Animals
         arr[0] = new Hippo("Harry");
         arr[1] = new Hippo("Harvey");
         arr[2] = new Rhino("Roger");
@@ -27,15 +63,12 @@ public class Zookeeper {
         arr[14] = new Cat("Cathy");
         arr[15] = new Cat("Chris");
 
-        // testing only
-        for (int i = 0; i < arr.length; i++) {
-            arr[i].printAnimal();
-            System.out.println(arr[i].makeNoise());
-            System.out.println(arr[i].wakeUp());
-            System.out.println(arr[i].sleep());
-            System.out.println(arr[i].eat());
-            System.out.println(arr[i].roam());
-            System.out.println("_______________\n");
-        }
+        // Run zookeeper duties
+        Zookeeper z = new Zookeeper();
+        z.wakeywakey(arr);
+        z.rollCall(arr);
+        z.feed(arr);
+        z.excercise(arr);
+        z.sleep(arr);
     }
 }

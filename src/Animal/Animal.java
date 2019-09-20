@@ -1,19 +1,21 @@
 package Animal;
 
+// Varying Eating behavior 
 public interface EatBehavior {
     String eat();
 }
 
+// Varying Speaking behavior 
 public interface SpeakBehavior {
     String makeNoise();
 }
 
+// Varying Roaming behavior 
 public interface RoamBehavior {
     String roam();
 }
 
 public abstract class Animal implements SpeakBehavior, EatBehavior, RoamBehavior {
-    // I'd like these to be public so we don't have to run methods to retrieve them
     protected String name;
     protected String family;
     protected String species;

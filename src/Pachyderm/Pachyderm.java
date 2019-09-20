@@ -9,7 +9,7 @@ abstract public class Pachyderm extends Animal implements RoamBehavior, EatBehav
     }
 
     public String eat() {
-        return "Cronching on some Hay and fruit \n";
+        return "Cronching on some Hay and fruit";
     }
 
     public String roam() {

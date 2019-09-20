@@ -9,7 +9,7 @@ abstract public class Canine extends Animal implements RoamBehavior, EatBehavior
     }
 
     public String eat() {
-        return "Eating some kibble and cat \n";
+        return "Eating some kibble and cat";
     }
 
     public String roam() {
